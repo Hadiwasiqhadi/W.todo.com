@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Link Display</title>
+</head>
+<body>
+    <div>
+        <h2>Enter a Video Link</h2>
+        <input type="text" id="videoLink" placeholder="Enter video URL here">
+        <button onclick="loadVideo()">Load Video</button>
+    </div>
+
+    <div id="videoDisplay" style="margin-top: 20px;">
+        <iframe id="videoPlayer" style="max-width: 100%; height: 400px; display: none;" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function loadVideo() {
+            const videoLink = document.getElementById('videoLink').value;
+            const videoPlayer = document.getElementById('videoPlayer');
+            
+            if (videoLink) {
+                videoPlayer.src = videoLink;
+                videoPlayer.style.display = 'block';
+            } else {
+                alert('Please enter a valid video URL.');
+            }
+        }
+    </script>
+</body>
+</html>
